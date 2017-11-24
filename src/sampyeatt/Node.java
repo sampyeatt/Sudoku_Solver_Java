@@ -37,4 +37,11 @@ public class Node {
             }
         }
     }
+    public String printableVal(){
+        if(isSet())
+        {
+            return actval.toString();
+        }
+        return " ";
+    }
 }
