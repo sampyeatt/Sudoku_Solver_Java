@@ -1,6 +1,7 @@
 package sampyeatt;
 
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * Created by Sam Pyeatt on 11/24/2017.
@@ -21,8 +22,8 @@ public class BoardTest {
 
         b.setVal(2,0,1);
         b.setVal(2,1,9);
-        b.setVal(2,6,4);
-        b.setVal(2,7,5);
+        b.setVal(2,5,4);
+        b.setVal(2,6,5);
 
         b.setVal(3,0,8);
         b.setVal(3,1,2);
@@ -54,7 +55,11 @@ public class BoardTest {
         b.setVal(8,4,1);
         b.setVal(8,5,8);
 
+        assertFalse(b.isComplete());
         b.printB();
+        b.solve();
+        b.printB();
+        assertTrue(b.validate());
 
     }
 }
