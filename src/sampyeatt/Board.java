@@ -18,6 +18,8 @@ public class Board {
         nodes[row][col].setValue(val);
     }
 
+    //TODO: What does printB mean? It looks like it's printing the board. So call
+    // it printBoard().
     public void printB(){
         System.out.println("1 2 3 4 5 6 7 8 9");
         System.out.println("- - - - - - - - -");
@@ -82,11 +84,14 @@ public class Board {
             }
         }
     }
+
+    // TODO: Again, spell out names completely, it makes things more readable.
     public void scanSqua(){
         for(int row =0; row<9;row++)
         {
             for(int col =0; col <9;col++)
             {
+                // TODO: Really needs comments to explain what is going on here.
                 int topSqua = (row/3)*3;
                 int leftSqua = (col/3)*3;
                 Node n = nodes[row][col];
@@ -143,6 +148,12 @@ public class Board {
     public void solve()
     {
         int count = 0;
+        // TODO: This is a good example of something called a 'magic number'
+        // You generally want to avoid magic numbers in code. Instead, add
+        // a private static int variable to the class called something like
+        // MAX_ITERATIONS = 21.
+        // so your while loop would then look like this.
+        // while (!isComplete() && count < MAX_ITERATIONS)
         while(!isComplete() && count < 21)
         {
             scanCol();

@@ -9,6 +9,7 @@ import java.util.List;
 public class Node {
     int row;
     int column;
+    //TODO: I'm assuming these are possible values. So I'd name it possibleValues
     List<Integer> posval = new ArrayList<>();
     Integer actval;
 
@@ -29,6 +30,9 @@ public class Node {
         posval.clear();
     }
 
+    // TODO: should be called cantBe(). Also, in the inline documentation
+    // put in a comment that states if the possibleValues is down to 1
+    // this method sets the actual value
     void cantB(Integer val){
         if(!isSet()){
             posval.remove(val);
